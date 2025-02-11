@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="parseFile()">Tulosta .JSON -tiedosto consoliin</button>
+
+    <script>
+      function parseFile() {
+        var fileInput = document.createElement("input");
+        fileInput.setAttribute("type", "file");
+        fileInput.onchange = function () {
+          var file = fileInput.files[0];
+
+          var reader = new FileReader();
+          reader.onload = function () {
+            console.log(JSON.parse(reader.result));
+            console.log("Found name: " + findNameJson(reader.result));
+          };
+          reader.readAsText(file);
+        };
+        fileInput.click();
+      }
+
+      // Palauttaa jsonissa "name" avaimen
+      function findNameJson(text) {
+        const obj = JSON.parse(text);
+        if ("name" in obj) {
+          return obj.name; // Palauta nimi jos löyty
+        } else {
+          return "Not found";
+        }
+      }
+    </script>
+  </body>
+</html>
