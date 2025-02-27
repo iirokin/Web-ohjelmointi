@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taulukko</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+      $(document).ready(function () {
+        // FETCHING DATA FROM JSON FILE
+        $.getJSON(
+          "http://a41d.k.time4vps.cloud:3001/henkilot",
+          function (data) {
+            var tableBody = "";
+            $.each(data, function (key, entry) {
+              tableBody +=
+                "<tr><td>" +
+                entry.nimi +
+                "</td><td>" +
+                entry.puhelin +
+                "</td></tr>";
+            });
+            $("#phoneTable tbody").html(tableBody);
+          }
+        );
+      });
+    </script>
+  </head>
+  <body>
+    <a href="index.html">Takaisin</a>
+
+    <h1>Puhelinluettelo</h1>
+    <table id="phoneTable">
+      <thead>
+        <tr>
+          <th>Nimi</th>
+          <th>Puhelinnumero</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+</html>

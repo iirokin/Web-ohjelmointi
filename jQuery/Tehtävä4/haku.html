@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haku</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('[name="submit"]').click(function () {
+          let nimi = $('[name="nimi"]').val().toLowerCase();
+          $.getJSON(
+            "http://a41d.k.time4vps.cloud:3001/henkilot",
+            function (data) {
+              // oletus ei löytänyt mitään
+              let puhelin = "Ei löytynyt";
+              $("#puhelin").css("font-weight", "normal");
+
+              // haku
+              $.each(data, function (key, entry) {
+                if (entry.nimi.toLowerCase() === nimi) {
+                  puhelin = entry.puhelin;
+                  $("#puhelin").css("font-weight", "bold"); // Tekee bold jos löyty
+                }
+              });
+              $("#puhelin").val(puhelin); // Aseta teksti kenttään löytö
+            }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="index.html">Takaisin</a>
+    <h1>Hae henkilön puhelinnumero</h1>
+    <form id="form" name="form">
+      <th>Syötä nimi:</th>
+      <td>
+        <input
+          name="nimi"
+          id="nimi"
+          type="text"
+          value=""
+          maxlength="35"
+          size="35"
+        />
+      </td>
+
+      <td>
+        <input name="submit" type="button" value="Hae puhelinnumero" />
+      </td>
+    </form>
+
+    <div class="input-container">
+      <label for="puhelin">Puhelinnumero:</label>
+      <input
+        name="puhelin"
+        id="puhelin"
+        type="text"
+        value=""
+        maxlength="35"
+        size="35"
+      />
+    </div>
+  </body>
+</html>
