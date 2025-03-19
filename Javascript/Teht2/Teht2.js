@@ -36,5 +36,5 @@ let Search = SearchDirectory(Phonenumber_Directory, SearchName); // Haku
 if (Search !== null) {
   console.log("Henkilön " + SearchName + " puhelinnumero on: " + Search);
 } else {
-  console.log("Henkilöä nimeltä" + SearchName + "ei löytynyt.");
+  console.log("Henkilöä nimeltä " + SearchName + " ei löytynyt.");
 }
