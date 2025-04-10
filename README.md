@@ -3,7 +3,7 @@ Tästä löytyy Web-ohjelmointi 1 kurssin tehtävät.
 
 - [Tehtävä 1](https://github.com/iirokin/Web-ohjelmointi/tree/main/Javascript/Teht1)
 - [Tehtävä 2](https://github.com/iirokin/Web-ohjelmointi/tree/main/Javascript/Teht2) (Korjattu)
-- [Tehtävä 3](https://github.com/iirokin/Web-ohjelmointi/tree/main/Javascript/Teht3)
+- [Tehtävä 3](https://github.com/iirokin/Web-ohjelmointi/tree/main/Javascript/Teht3) (Korjattu)
 - [Tehtävä 4](https://github.com/iirokin/Web-ohjelmointi/tree/main/jQuery/Teht%C3%A4v%C3%A44)
 - [Tehtävä 5](https://github.com/iirokin/Web-ohjelmointi/tree/main/Javascript/Teht5)
 - [Tehtävä 6](https://github.com/iirokin/Web-ohjelmointi/tree/main/Portfolio/dist) (Portfolio)
