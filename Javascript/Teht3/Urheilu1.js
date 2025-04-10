@@ -13,39 +13,21 @@ class Urheilija extends Henkilo {
   laji;
   saavutukset;
 
-  constructor(etunimet, sukunimi, kutsumanimi, syntymavuosi) {
+  constructor(
+    etunimet,
+    sukunimi,
+    kutsumanimi,
+    syntymavuosi,
+    linkki_kuvaan,
+    omapaino,
+    laji,
+    saavutukset
+  ) {
     super(etunimet, sukunimi, kutsumanimi, syntymavuosi);
-  }
 
-  get linkki_kuvaan() {
-    return this.linkki_kuvaan;
-  }
-
-  set linkki_kuvaan(url) {
-    this.linkki_kuvaan = url;
-  }
-
-  get omapaino() {
-    return this.omapaino;
-  }
-
-  set omapaino(paino) {
-    this.omapaino = paino;
-  }
-
-  get laji() {
-    return this.laji;
-  }
-
-  set laji(laji) {
+    this.linkki_kuvaan = linkki_kuvaan;
+    this.omapaino = omapaino;
     this.laji = laji;
-  }
-
-  get saavutukset() {
-    return this.saavutukset;
-  }
-
-  set saavutukset(saavutukset) {
     this.saavutukset = saavutukset;
   }
 }
@@ -54,12 +36,12 @@ let uusiUrheilija = new Urheilija(
   "Iiro",
   "Kinnunen",
   "IiroK",
-  new Date(1998, 6, 7)
+  new Date("1998")
 );
 
 // Kokeilu
 uusiUrheilija.omapaino = 80;
-uusiUrheilija.linkki_kuvaan = "https://www.google.com"
+uusiUrheilija.linkki_kuvaan = "https://www.google.com";
 uusiUrheilija.laji = "Nukkuminen";
 uusiUrheilija.saavutukset = ["2025 Kulta", "2024 Hopea"];
 console.log(uusiUrheilija);
